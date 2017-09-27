@@ -11,10 +11,6 @@ Scenario: See new task as active
 	When i add new task
 	Then the task will be displayed as active in the tasks list
 
-Scenario: Adding task in Hebrew
-Given i have open the todos screen
-When i add new task in Hebrew
-Then the task name will be aligned to right
 
 Scenario: Adding task with a long text
 Given i have open the todos screen
@@ -28,11 +24,17 @@ Then the added task will be displayed in the tasks list
 
 
 Scenario: Trim leading and trailing white-space characters from task name
-Given i have open the todos screen
-When i add new task with leading and trailing white-space characters in task name
-Then  the white-space characters will be trimmed from task name
+	Given i have open the todos screen
+	When i add new task with leading and trailing white-space characters in task name
+	Then  the white-space characters will be trimmed from task name
+
+Scenario: Trim leading and trailing white-space characters from task name NEW
+	Given i have open the todos screen
+	When I add new task " Task Name "
+	Then the task "Task Name" will appear in the list
+
 
 Scenario: Not allow to add a task that contains only spaces
-Given i have open the todos screen
-When i try to add task with name that contains only spaces
-Then the task won't be added to the tasks list
+	Given i have open the todos screen
+	When i try to add task with name that contains only spaces
+	Then the task won't be added to the tasks list

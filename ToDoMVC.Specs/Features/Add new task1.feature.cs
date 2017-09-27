@@ -98,34 +98,17 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Adding task in Hebrew")]
-        public virtual void AddingTaskInHebrew()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding task in Hebrew", ((string[])(null)));
-#line 14
-this.ScenarioSetup(scenarioInfo);
-#line 15
-testRunner.Given("i have open the todos screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 16
-testRunner.When("i add new task in Hebrew", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
-testRunner.Then("the task name will be aligned to right", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Adding task with a long text")]
         public virtual void AddingTaskWithALongText()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding task with a long text", ((string[])(null)));
-#line 19
+#line 15
 this.ScenarioSetup(scenarioInfo);
-#line 20
+#line 16
 testRunner.Given("i have open the todos screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 21
+#line 17
 testRunner.When("i add task with a long name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
+#line 18
 testRunner.Then("the task name will be displayed in multiple rows in the tasks list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -136,13 +119,13 @@ testRunner.Then("the task name will be displayed in multiple rows in the tasks l
         public virtual void AddTaskAndRefreshThePageToSeeTheUpdatedTask()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add task and refresh the page to see the updated task", ((string[])(null)));
-#line 24
+#line 20
 this.ScenarioSetup(scenarioInfo);
-#line 25
+#line 21
 testRunner.Given("i have added new task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 26
+#line 22
 testRunner.When("i refresh the todos page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
+#line 23
 testRunner.Then("the added task will be displayed in the tasks list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -153,14 +136,31 @@ testRunner.Then("the added task will be displayed in the tasks list", ((string)(
         public virtual void TrimLeadingAndTrailingWhite_SpaceCharactersFromTaskName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trim leading and trailing white-space characters from task name", ((string[])(null)));
-#line 30
+#line 26
 this.ScenarioSetup(scenarioInfo);
+#line 27
+ testRunner.Given("i have open the todos screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 28
+ testRunner.When("i add new task with leading and trailing white-space characters in task name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
+ testRunner.Then("the white-space characters will be trimmed from task name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Trim leading and trailing white-space characters from task name NEW")]
+        public virtual void TrimLeadingAndTrailingWhite_SpaceCharactersFromTaskNameNEW()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trim leading and trailing white-space characters from task name NEW", ((string[])(null)));
 #line 31
-testRunner.Given("i have open the todos screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 32
-testRunner.When("i add new task with leading and trailing white-space characters in task name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("i have open the todos screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 33
-testRunner.Then("the white-space characters will be trimmed from task name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I add new task \" Task Name \"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+ testRunner.Then("the task \"Task Name\" will appear in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -170,14 +170,14 @@ testRunner.Then("the white-space characters will be trimmed from task name", ((s
         public virtual void NotAllowToAddATaskThatContainsOnlySpaces()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Not allow to add a task that contains only spaces", ((string[])(null)));
-#line 35
-this.ScenarioSetup(scenarioInfo);
-#line 36
-testRunner.Given("i have open the todos screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 37
-testRunner.When("i try to add task with name that contains only spaces", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 38
-testRunner.Then("the task won\'t be added to the tasks list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("i have open the todos screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 39
+ testRunner.When("i try to add task with name that contains only spaces", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+ testRunner.Then("the task won\'t be added to the tasks list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
