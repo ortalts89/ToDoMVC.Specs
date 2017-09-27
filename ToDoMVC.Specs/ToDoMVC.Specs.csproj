@@ -68,6 +68,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Add new task.feature</DependentUpon>
     </Compile>
+    <Compile Include="Hooks.cs" />
+    <Compile Include="Steps\BrowserSteps.cs" />
     <Compile Include="PageObject\TodosPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\NewTaskSteps.cs" />

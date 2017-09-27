@@ -2,7 +2,7 @@
 	
 
 Scenario: Add task and see it in the end of the list
-	Given I have open the todos screen
+	Given i have open the todos screen
 	When i add new task
 	Then the task will be added to the end of the tasks list
 

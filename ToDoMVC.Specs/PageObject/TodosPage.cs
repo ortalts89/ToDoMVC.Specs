@@ -11,10 +11,23 @@ namespace ToDoMVC.Specs.PageObject
 {
     public class TodosPage
     {
-        public ChromeDriver Driver = new ChromeDriver();
-        public void OpenToDosScreen()
+        private IWebDriver driver;
+
+        public TodosPage(IWebDriver driver)
         {
-            Driver.Navigate().GoToUrl("http://todomvc.com/examples/react/#/");
+            this.driver = driver;
+            // Check that we're on the right page.
+            if (driver.Title != "React • TodoMVC")
+            {
+                // Alternatively, we could navigate to the login page, perhaps logging out first
+                throw new NotFoundException("This is not the login page");
+            }
+        }
+        
+        public static TodosPage OpenToDosScreen(IWebDriver driver)
+        {
+            driver.Navigate().GoToUrl("http://todomvc.com/examples/react/#/");
+            return new TodosPage(driver);
         }
     }
 }

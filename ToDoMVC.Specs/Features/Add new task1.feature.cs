@@ -71,7 +71,7 @@ namespace ToDoMVC.Specs.Features
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
- testRunner.Given("I have open the todos screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("i have open the todos screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
  testRunner.When("i add new task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
