@@ -25,7 +25,7 @@ namespace ToDoMVC.Specs.Steps
         [When(@"i add new task")]
         public void WhenIAddNewTask()
         {
-            AddNewTask();
+            //AddNewTask();
         }
 
 
