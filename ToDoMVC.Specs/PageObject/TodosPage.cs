@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
+using ToDoMVC.Specs.Steps;
 
 namespace ToDoMVC.Specs.PageObject
 {
-    public class TodosPage
+    public class TodosPage : BasePage
     {
-        private IWebDriver driver;
-
-        public TodosPage(IWebDriver driver)
+        public TodosPage(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
             // Check that we're on the right page.
             if (driver.Title != "React • TodoMVC")
             {
@@ -28,6 +28,18 @@ namespace ToDoMVC.Specs.PageObject
         {
             driver.Navigate().GoToUrl("http://todomvc.com/examples/react/#/");
             return new TodosPage(driver);
+        }
+
+        private IWebElement AddNewTaskTextBox => Element(css: "input[class='new-todo']");
+        public List<TaskRow> Tasks { get; set; }
+
+
+        public TodosPage AddNewTask()
+        {
+            AddNewTaskTextBox.Clear();
+            AddNewTaskTextBox.SendKeys("Run Automation");
+            AddNewTaskTextBox.SendKeys(Keys.Enter);
+            return this;
         }
     }
 }
